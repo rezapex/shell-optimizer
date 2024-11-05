@@ -1,0 +1,60 @@
+{
+  "name": "shell-optimizer",
+  "title": "Shell Optimizer",
+  "description": "Optimize your shell configuration for better performance",
+  "version": "1.0.0",
+  "license": "MIT",
+  "icon": "command-icon.png",
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "lint": "ray lint"
+  },
+  "dependencies": {
+    "@raycast/api": "^1.26.0",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.8.3",
+    "@types/react": "^18.0.9",
+    "@raycast/utils": "^1.0.0",
+    "typescript": "^4.7.4"
+  },
+  "commands": [
+    {
+      "name": "optimize-shell",
+      "title": "Optimize Shell",
+      "description": "Analyze and optimize your shell configuration",
+      "mode": "view",
+      "icon": "command-icon.png"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "shellType",
+      "type": "dropdown",
+      "required": true,
+      "title": "Shell Type",
+      "description": "Select your shell type",
+      "data": [
+        {
+          "title": "Zsh",
+          "value": "zsh"
+        },
+        {
+          "title": "Bash",
+          "value": "bash"
+        }
+      ],
+      "default": "zsh"
+    },
+    {
+      "name": "backupLocation",
+      "type": "textfield",
+      "required": false,
+      "title": "Backup Location",
+      "description": "Directory to store shell configuration backups",
+      "default": "~/.shellopt/backups"
+    }
+  ]
+}
